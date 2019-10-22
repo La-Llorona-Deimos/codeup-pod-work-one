@@ -20,22 +20,40 @@ console.log(alphabet_order("little puppy dog"));
 //He did not die immediately, and the final voice was "Aa!"
 
 //if floor<=1, Mr. despair is safe, return ""
-function willManDie(floor){
-    if(floor === 1){
+
+
+//
+// function willManDie(floor){
+//     if(floor === 1){
+//         return "No harm done."
+//     } else if (floor <= 6){
+//         return "AHHH! MY LEGS!!"
+//     } else {
+//         return "Instant death."
+//     }
+// }
+//
+// console.log(willManDie(4));
+
+
+//I got this problem from CodeWars
+
+// and THENNN I refactored it as my third exercise to implement random generated number.
+// function getRandomfloor(x, y) {
+//     return Math.floor(Math.random() * (10 - 1 + 1) + min);
+// }
+
+
+var randomFloor = Math.ceil(Math.random() * (10 - 1) );
+
+function willManDie(){
+    if(randomFloor === 1){
         return "No harm done."
-    } else if (floor <= 6){
+    } else if (randomFloor <= 6){
         return "AHHH! MY LEGS!!"
     } else {
         return "Instant death."
     }
 }
 
-console.log(willManDie(4));
-
-
-//I got this problem from CodeWars
-
-
-
-//Write a function, getOlder() that takes in array of dog objects and increases the value of each object's age property by 1.
-
+console.log(willManDie());
