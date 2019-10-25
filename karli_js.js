@@ -22,18 +22,18 @@ console.log(alphabet_order("little puppy dog"));
 //if floor<=1, Mr. despair is safe, return ""
 
 
-//
-// function willManDie(floor){
-//     if(floor === 1){
-//         return "No harm done."
-//     } else if (floor <= 6){
-//         return "AHHH! MY LEGS!!"
-//     } else {
-//         return "Instant death."
-//     }
-// }
-//
-// console.log(willManDie(4));
+
+function willManDie(floor){
+    if(floor === 1){
+        return "No harm done."
+    } else if (floor <= 6){
+        return "AHHH! MY LEGS!!"
+    } else {
+        return "Instant death."
+    }
+}
+
+console.log(willManDie(4));
 
 
 //I got this problem from CodeWars
@@ -48,12 +48,20 @@ var randomFloor = Math.ceil(Math.random() * (10 - 1) );
 
 function willManDie(){
     if(randomFloor === 1){
-        return "No harm done."
+        return ("Man fell " +randomFloor + " floor. No harm done.")
     } else if (randomFloor <= 6){
-        return "AHHH! MY LEGS!!"
+        return ("Man fell " + randomFloor + " floors. He screams, 'AHHH! MY LEGS!!' ")
     } else {
-        return "Instant death."
+        return ("Man fell " +randomFloor + " floors. Instant death.")
     }
 }
 
 console.log(willManDie());
+
+
+//test
+//codeup bonus, practiing prompts and alerts.
+
+
+var promptResponse =prompt("What's your favorite color?");
+    alert(promptResponse +" , that's my favorite color too!");
