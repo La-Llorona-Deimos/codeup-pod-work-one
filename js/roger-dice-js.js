@@ -18,6 +18,7 @@
     var roll = function (x, y) {
         if (bank === 0){
             alert("you are out of money");
+            bust();
         } else {
             var bet = parseFloat(prompt("you have $" + bank + ", how much do you want to bet?"));
             x = Math.floor(Math.random() * (6) + 1);
@@ -81,13 +82,17 @@
     }
 
     document.getElementById("playCraps").addEventListener("click", roll)
+
     $('#playCraps').click(function() {
-        $('html').css( "invisible" );
+        // $(this).css( 'background-color','red');
+        $(this).html( '<p>Roll Again?</p>');
+
     });
 
-    $('h1').click(function() {
-        $(this).css('background-color','red');
-    });
+    function bust(){
+        $('#bankAmount').css('background-color','red');
+    }
+
 
 
 })();
