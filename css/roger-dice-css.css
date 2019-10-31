@@ -1,0 +1,22 @@
+* {
+  font-family: Helvetica;
+  background: #45a5ae;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+header h1 {
+
+}
+#bankAmount{
+  /*display: flex;*/
+  /*justify-content: center;*/
+  border: 1px solid hotpink;
+  background-color: white;
+  padding: 25px;
+}
+#playCraps{
+  padding: 25px;
+
+}
