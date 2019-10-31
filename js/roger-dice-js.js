@@ -79,9 +79,15 @@
         document.getElementById("bankAmount").innerHTML = "Bank $" + bank ;
         console.log(bank);
     }
+
     document.getElementById("playCraps").addEventListener("click", roll)
+    $('#playCraps').click(function() {
+        $('html').css( "invisible" );
+    });
 
-
+    $('h1').click(function() {
+        $(this).css('background-color','red');
+    });
 
 
 })();
