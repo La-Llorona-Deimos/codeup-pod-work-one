@@ -30,12 +30,14 @@
             if (total === 7 || total === 11) {
                 alert("a first roll of " + total + " means you win!");
                 bank += bet;
+                // displayBank();
 
                 alert("you have $" + bank);
             } else if (total === 2 || total === 3 || total === 12) {
                 console.log("a first roll of " + total + " means you lose!");
                 alert("a first roll of " + total + " means you lose!");
                 bank -= bet;
+                displayBank();
                 alert("you have $" + bank);
             } else {
                 console.log("a first roll of " + total + " means roll again");
