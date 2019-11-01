@@ -18,6 +18,7 @@
     var roll = function (x, y) {
         if (bank === 0){
             alert("you are out of money");
+            bust();
         } else {
             var bet = parseFloat(prompt("you have $" + bank + ", how much do you want to bet?"));
             x = Math.floor(Math.random() * (6) + 1);
@@ -29,12 +30,14 @@
             if (total === 7 || total === 11) {
                 alert("a first roll of " + total + " means you win!");
                 bank += bet;
+                // displayBank();
 
                 alert("you have $" + bank);
             } else if (total === 2 || total === 3 || total === 12) {
                 console.log("a first roll of " + total + " means you lose!");
                 alert("a first roll of " + total + " means you lose!");
                 bank -= bet;
+                displayBank();
                 alert("you have $" + bank);
             } else {
                 console.log("a first roll of " + total + " means roll again");
@@ -52,6 +55,7 @@
                         alert("the first roll of " + total + " and this roll of " + totalTwo + " match. This means you win!");
                         bank += bet;
                         rollAgain = false;
+                        // document.getElementById("gameText").innerHTML = "Bank $" + bank ;
                         alert("you have $" + bank);
                     } else if (totalTwo === 7 || totalTwo === 2 || totalTwo === 11) {
                         console.log("you rolled " + totalTwo + ". This means you lose!");
@@ -76,11 +80,27 @@
 // }
 
     function displayBank(){
-        document.getElementById("bankAmount").innerHTML = "Bank $" + bank ;
-        console.log(bank);
-    }
-    document.getElementById("playCraps").addEventListener("click", roll)
+        if (bank === 0){
+            bust();
+            document.getElementById("bankAmount").innerHTML = "Bank $" + bank ;
 
+        } else {
+            document.getElementById("bankAmount").innerHTML = "Bank $" + bank ;
+            console.log(bank);
+        }
+    }
+
+    document.getElementById("playCraps").addEventListener("click", roll);
+
+    $('#playCraps').click(function() {
+        // $(this).css( 'background-color','yellow'); //need to figure out
+        $(this).html( '<p>Roll Again?</p>');
+
+    });
+
+    function bust(){
+        $('#bankAmount').css('background-color','red');
+    }
 
 
 
