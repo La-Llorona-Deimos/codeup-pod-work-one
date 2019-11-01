@@ -53,6 +53,7 @@
                         alert("the first roll of " + total + " and this roll of " + totalTwo + " match. This means you win!");
                         bank += bet;
                         rollAgain = false;
+                        // document.getElementById("gameText").innerHTML = "Bank $" + bank ;
                         alert("you have $" + bank);
                     } else if (totalTwo === 7 || totalTwo === 2 || totalTwo === 11) {
                         console.log("you rolled " + totalTwo + ". This means you lose!");
@@ -77,14 +78,20 @@
 // }
 
     function displayBank(){
-        document.getElementById("bankAmount").innerHTML = "Bank $" + bank ;
-        console.log(bank);
+        if (bank === 0){
+            bust();
+            document.getElementById("bankAmount").innerHTML = "Bank $" + bank ;
+
+        } else {
+            document.getElementById("bankAmount").innerHTML = "Bank $" + bank ;
+            console.log(bank);
+        }
     }
 
-    document.getElementById("playCraps").addEventListener("click", roll)
+    document.getElementById("playCraps").addEventListener("click", roll);
 
     $('#playCraps').click(function() {
-        // $(this).css( 'background-color','red');
+        // $(this).css( 'background-color','yellow'); //need to figure out
         $(this).html( '<p>Roll Again?</p>');
 
     });

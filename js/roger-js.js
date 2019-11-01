@@ -133,3 +133,4 @@
         output.innerHTML = splitted.join('');
     });
 })();
+
