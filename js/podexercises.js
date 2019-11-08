@@ -65,7 +65,7 @@ function testJackpot(result) {
     return true;
 }
 
-console.log(testJackpot(["blue, blue, blue, blue"]));
+console.log(testJackpot(["blue","blue", "blue", "blue"]));
 
 //Create a function that takes a word and returns true if the word has two consecutive identical letters.
 function doubleLetters(word) {
@@ -78,6 +78,8 @@ function doubleLetters(word) {
     }
     return false;
 }
+
+console.log(doubleLetters("Pop"));
 
 //function doubleLetters(word) {
 // 	return /(\w)\1/.test(word)
