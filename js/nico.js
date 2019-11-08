@@ -197,32 +197,124 @@ console.log(calculate_age(234135246));*/
 //     }
 //     return true;
 // };
-let isIsogram = (str) => str.split("").every((c, i) => str.indexOf(c) == i);
+// let isIsogram = (str) => str.split("").every((c, i) => str.indexOf(c) == i);
 
 
-console.log(isIsogram('Dermatoglyphics')); //true
-console.log(isIsogram('isogram')); //true
-console.log(isIsogram('aba')); //false "same chars may not be adjacent"
-console.log(isIsogram('moOse')); //false "same chars may not be same case"
-console.log(isIsogram('isIsogram')); //false
-console.log(isIsogram("")); //true "an empty string is a valid isogram"
+// console.log(isIsogram('Dermatoglyphics')); //true
+// console.log(isIsogram('isogram')); //true
+// console.log(isIsogram('aba')); //false "same chars may not be adjacent"
+// console.log(isIsogram('moOse')); //false "same chars may not be same case"
+// console.log(isIsogram('isIsogram')); //false
+// console.log(isIsogram("")); //true "an empty string is a valid isogram"
 
 
 //Write a function, persistence, that takes in a positive parameter num and
 // returns its multiplicative persistence, which is the number of times
 // you must multiply the digits in num until you reach a single digit.
-function persistence(num) {
-    var times = 0;
-    num = num.toString();
-    while(num.length > 1) {
-    times++;
-    num = num.split('').map(Number).reduce((a,b) => a * b).toString();
-    }
-    return times;
-}
+// function persistence(num) {
+//     var times = 0;
+//     num = num.toString();
+//     while (num.length > 1) {
+//         times++;
+//         num = num.split('').map(Number).reduce((a, b) => a * b).toString();
+//     }
+//     return times;
+// }
+//
+// console.log(persistence(39), 3);
+// console.log(persistence(4), 0);
+// console.log(persistence(25), 2);
+// console.log(persistence(999), 4);
 
-console.log(persistence(39),3);
-console.log(persistence(4),0);
-console.log(persistence(25),2);
-console.log(persistence(999),4);
+//MORE CODE STUFF BELOW
+
+//idea came from code wars
+const decodeMorse = (morseCode) => {
+    let bucket = [];
+    let word = "";
+
+
+    let ref = {
+        a: ".-",
+        b: "-...",
+        c: "-.-.",
+        d: "-..",
+        e: ".",
+        f: "..-.",
+        g: "--.",
+        h: "....",
+        i: "..:",
+        j: ".---",
+        k: "-.-",
+        l: ".-..",
+        m: "--",
+        n: "-.",
+        o: "---",
+        p: ".--.",
+        q: "--.-",
+        r: ".-.",
+        s: "...",
+        t: "-",
+        u: "..-",
+        v: "...-",
+        w: ".--",
+        x: "-..-",
+        y: "-.--",
+        z: "--..",
+        1: ".----",
+        2: "..---",
+        3: "...--",
+        4: "....-",
+        5: ".....",
+        6: "-....",
+        7: "--...",
+        8: "---..",
+        9: "----.",
+        0: "-----"
+    };
+
+    let first = morseCode.split('   ');
+    first.forEach((f, i) => {
+        console.log(i);
+        word = "";
+
+        let split = f.split(' ');
+
+        split.forEach((f) => {
+            let values = Object.values(ref);
+            if (values.includes(f)) {
+
+                let keys = Object.keys(ref);
+                let index = values.indexOf(f);
+
+                let letter = keys[index];
+
+                word += letter;
+            }
+        });
+
+        bucket.push(word)
+    });
+
+    let join = bucket.join(" ");
+    return join;
+    console.log(join)
+
+
+};
+
+console.log(decodeMorse(".-- --- .-. -..   .-- --- .-. -.."));
+
+
+// console.log(decodeMorse('a'));
+
+//code wars
+// function iqTest(numbers){
+//    // i need to be able to differentiate which numbers are evenly divisible by each other
+//
+//
+// }
+// console.log(iqTest("2 4 7 8 10")); //3 index
+// console.log(iqTest("1 2 2")); //1 index
+
 

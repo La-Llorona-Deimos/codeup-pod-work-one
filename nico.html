@@ -3,10 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Pod Work</title>
+    <style>
+        #morseBox , #morseDiv{
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid black;
+        }
+
+    </style>
 </head>
 <body>
+<div id="morseDiv">
 
+    <form>
+        <input type="text" id="morseBox" name="textfield" placeholder="For Morse Code" />
+    </form>
+
+</div>
 <script src = "js/nico.js"></script>
+<script
+        src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function (){
+        "use strict";
+
+      // $("#morseBox").keyup(function(e){
+      //     e.preventDefault();
+      //
+      //   })
+        $("#morseBox").on('keydown', function() {
+            // console.log(decodeMorse());
+        });
+    })
+
+</script>
 <!--test branching-->
 </body>
 </html>
