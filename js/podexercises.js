@@ -67,4 +67,18 @@ function testJackpot(result) {
 
 console.log(testJackpot(["blue, blue, blue, blue"]));
 
-//
+//Create a function that takes a word and returns true if the word has two consecutive identical letters.
+function doubleLetters(word) {
+    word = word.split("");
+    for (var i = 1; i < word.length; i++){
+        if(word[i-1] == word[i]){
+            return true;
+            break;
+        }
+    }
+    return false;
+}
+
+//function doubleLetters(word) {
+// 	return /(\w)\1/.test(word)
+// } ask about what /(\w)\ is
