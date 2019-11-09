@@ -229,6 +229,8 @@ console.log(calculate_age(234135246));*/
 //MORE CODE STUFF BELOW
 
 //idea came from code wars
+//try ES6 to try and get a little bit ahead
+
 const decodeMorse = (morseCode) => {
     let bucket = [];
     let word = "";
